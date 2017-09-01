@@ -16,6 +16,10 @@ footer {
     padding-top: 10px;
 }
 
+footer p {
+    color: grey;
+}
+
 nav a {     /* links within "nav" container */
     padding: 15px;
     padding-bottom: 5px;
