@@ -1,0 +1,42 @@
+div {
+    display: inline-block;
+}
+
+body {
+    text-align: center;
+    background-color: black;
+    font-family: 'Baloo Bhaijaan';
+}
+p{
+    color: white;
+}
+hr{
+    width: 550px;
+}
+img {
+    width: 270px;
+    height: 200px;
+    border-radius: 25px;
+}
+#season-title {
+    color: yellow;
+}
+
+.im1 {
+    border-radius: 20px 0px 0px 0px;
+}
+.im2 {
+    border-radius: 0px 20px 0px 0px;
+}
+.im3 {
+    border-radius: 0px 0px 0px 20px;
+}
+.im4 {
+    border-radius: 0px 0px 20px 0px;
+}
+
+img:hover {
+    width: 290px;
+    height: 220px;
+    transition: .9s;
+}
