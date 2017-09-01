@@ -25,7 +25,7 @@ nav a {     /* links within "nav" container */
 }
 
 nav a:hover {     /* pseudo class */
-    border-bottom:20px #36517c solid;
+    border-bottom:4px #36517c solid;
     font-size: 2em;
     transition: .9s; /* transition effect */
 }
@@ -45,8 +45,8 @@ td string {
 }
 
 ul {
-    text-align: left;
     padding-left: 200px;
+    text-align: left;
 }
 
 h1 {
@@ -69,8 +69,8 @@ hr {
     background-color: #753900;
 }
 
-#me, #welcomeText {
-    float: left;
+#top-bar{
+    width: 50%;
 }
 
 #table-header {
@@ -83,3 +83,4 @@ hr {
     width: 1200px;
     text-align: center;
 }
+
