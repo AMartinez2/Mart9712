@@ -2,8 +2,10 @@ body {
     padding: 0;
     margin: 0;
     margin-bottom: 50px;
-    background-color: #fff;
+    background-color: #eeeff7;
     text-align: left;
+    font-family: 'Lato', sans-serif;
+    min-width: 500px;
 }
 
 nav {
@@ -13,23 +15,37 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: #eeeff7;
     padding: 5px;
+    padding-top: 2px;
+    padding-bottom: 10px;
+}
+
+nav a:hover {
+    background-color: #1c1d21;
 }
 
 header {
-    padding-top: 5px;
     min-height: 60px;
-    background-color: grey;
-    border-bottom-width: 2px;
+    background-color: #31353d;
+    border-bottom-width: 3px;
     border-bottom-style: solid;
-    border-bottom-color: red;
+    border-bottom-color: #92cdcf;
 }
-
+/*
+#1c1d21
+#31353d
+#445878
+#92cdcf
+#eeeff7
+*/
 img {
     width: 200px;
     height: 200px;
     margin: auto;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #31353d
 }
 
 footer {
@@ -42,6 +58,11 @@ footer {
     border-top-color: red;
 }
 
+#site-title {
+    color: #eeeff7;
+    text-decoration: none;
+}
+
 #footer {
     text-align: center;
     clear: right;
@@ -49,11 +70,17 @@ footer {
 }
 
 #bottom-link{
-   padding: 12px;
+   padding: 20px;
 } 
+
 #bottom-link a {
     text-decoration: none;
-    color: black;
+    font-size: 12px;
+    color: #92cdcf;
+}
+
+.selected {
+    background-color: #445878;
 }
 
 .container {
@@ -68,6 +95,7 @@ footer {
 
 .content {
     padding-top: 8px;
+    color: #31353d;
 }
 
 .first-content {
@@ -85,4 +113,23 @@ footer {
 
 .page-title {
     margin: 0;
+}
+
+@media only screen and (max-width: 1010px){
+    .showcase {
+        text-align: center;
+    }
+    .page-title{
+        text-align: center;
+    }
+    .first-content{
+        float:none;
+        text-align: center;
+        margin: auto;
+    }
+    .next-content{
+        float: none;
+        text-align: center;
+        margin: auto;
+    }
 }
