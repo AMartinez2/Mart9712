@@ -5,7 +5,12 @@ body {
     background-color: #eeeff7;
     text-align: left;
     font-family: 'Lato', sans-serif;
-    min-width: 500px;
+    min-width: 580px;
+}
+@media only screen and (max-width: 1010px){
+    body {
+        text-align: center;
+    }
 }
 
 nav {
@@ -32,13 +37,6 @@ header {
     border-bottom-style: solid;
     border-bottom-color: #92cdcf;
 }
-/*
-#1c1d21
-#31353d
-#445878
-#92cdcf
-#eeeff7
-*/
 img {
     width: 200px;
     height: 200px;
@@ -85,12 +83,8 @@ footer {
 
 .container {
     width: 70%;
-    max-width: 1000px;
-    margin:auto;
-}
-
-.showcase {
-    background: url();
+    max-width: 900px;
+    margin: auto;
 }
 
 .content {
@@ -103,10 +97,27 @@ footer {
     float: left
 }
 
+@media only screen and (max-width: 1010px){
+.first-content{
+        float:none;
+        text-align: center;
+        margin: auto;
+    }
+}
+
 .next-content {
     width: 300px;
     float: right;
 }
+
+@media only screen and (max-width: 1010px){
+.next-content{
+        float: none;
+        text-align: center;
+        margin: auto;
+    }
+}
+
 .inner-header {
     padding: 10px;
 }
@@ -115,21 +126,3 @@ footer {
     margin: 0;
 }
 
-@media only screen and (max-width: 1010px){
-    .showcase {
-        text-align: center;
-    }
-    .page-title{
-        text-align: center;
-    }
-    .first-content{
-        float:none;
-        text-align: center;
-        margin: auto;
-    }
-    .next-content{
-        float: none;
-        text-align: center;
-        margin: auto;
-    }
-}
