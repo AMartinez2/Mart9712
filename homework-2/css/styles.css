@@ -1,0 +1,41 @@
+body {
+    background-color:black;
+}
+
+h1, h3 {
+    color: #fff;
+}
+
+.container {
+    width: 50%;
+    max-width: 700px;
+    margin: auto;
+}
+
+.page-title{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    border-style: solid;
+    border-color: #fff;
+}
+
+.inside {
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    background-color: #101010;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f1f1f1;
+}
+
+.font1 {
+    font-family: 'Raleway', sans-serif;
+}
+.font2 {
+    font-family: 'Anton', sans-serif;
+}
+.font3 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
