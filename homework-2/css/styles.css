@@ -6,18 +6,26 @@ h1, h3 {
     color: #fff;
 }
 
+.bass-image {
+    background-image: url("../img/nebula.jpg");
+}
+
 .container {
     width: 50%;
     max-width: 700px;
     margin: auto;
 }
 
-.page-title{
+.page-title {
     margin-top: 20px;
     text-align: center;
     font-size: 30px;
     border-style: solid;
     border-color: #fff;
+}
+
+.image1 {
+    background-image: url("../img/night.jpg");
 }
 
 .inside {
@@ -28,6 +36,7 @@ h1, h3 {
     border-style: solid;
     border-width: 1px;
     border-color: #f1f1f1;
+    opacity: .9;
 }
 
 .font1 {

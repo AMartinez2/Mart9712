@@ -2,9 +2,13 @@
     function run(){
         // Randomly select font
         $var1 = rand(0, 3);
-        echo "<div class='page-title font$var1'><h1>CHOOSE YOUR DESTINY</h1>";
-        echo "<div class='inside font$var1'>";
+        echo "<div class='image1'>";
+        echo    "<div class='page-title font$var1'>";
+        echo    "<h1>CHOOSE YOUR DESTINY</h1>";
+        echo    "</div>";
+        echo "</div>";
         
+        echo "<div class='inside font$var1'>";
         for ($i=1; $i<7; $i++){
             ${"array".$i} = createArrayFromFile("names/names".$i.".txt");
             shuffle(${"array".$i});
@@ -29,6 +33,7 @@
                 echo "<h1>".$array5[$var1]." ".$array6[$var2]."</h1>";
             }
         }
+        echo "</div>";
         echo "</div>";
     }
     
