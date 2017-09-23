@@ -2,20 +2,19 @@ body {
     margin: 0;
     padding: 0;
     display: block;
-    background-color: #f1f1f1;
-    min-width: 1350px;
 }
 p {
     
 }
 .container {
-    width: 40%;
-    max-width: 1000px;
+    width: 50%;
+    max-width: 1000%;
     margin: auto;
 }
 
 header {
     text-align: center;
+    background-color: #f1f1f1;
     height: 50px;
     width: 100%;
     margin: 0;
@@ -30,6 +29,7 @@ header {
     max-height: 100px !important;
     width: 100%;
     overflow: hidden;
+    background-color: #eee;
     margin: 5px;
 }
 
@@ -42,12 +42,8 @@ header {
 
 .player-points {
     float: right;
-    padding: 5px;
-    margin-top: auto;
-    margin-bottom: auto;
 }
 
 .end-field {
     text-align: center;
 }
-
