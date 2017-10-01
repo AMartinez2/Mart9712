@@ -1,10 +1,10 @@
 <?php
 
 //returns array with 100 URLs to images from Pixabay.com, based on a "keyword"
-function getImageURLs($keyword, $orientation) {
+function getImageURLs($keyword, $orientation, $catagory) {
     $curl = curl_init();
     curl_setopt_array($curl, array(
-      CURLOPT_URL => "https://pixabay.com/api/?key=6519486-9c505526f56e80d0a4fe8d82a&q=$keyword&image_type=photo&orientation=$orientation&safesearch=true&per_page=100",
+      CURLOPT_URL => "https://pixabay.com/api/?key=6519486-9c505526f56e80d0a4fe8d82a&q=$keyword&image_type=photo&orientation=$orientation&category=$catagory&safesearch=true&per_page=100",
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_TIMEOUT => 30,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -26,5 +26,3 @@ function getImageURLs($keyword, $orientation) {
     
     return $imageURLs;
 }
-
-?>

@@ -1,17 +1,26 @@
 <?php 
     $backgroundImage = "img/sea.jpg";
     
-    // API call goes here
-    if ($_GET['keyword'] != "") {
-        include 'api/pixabayAPI.php';
-        $imageURLs = getImageURLs($_GET['keyword'], $_GET['layout']);
-        $backgroundImage = $imageURLs[array_rand($imageURLs)];
-    }
-    else if(isset($_GET['keyword-s']) && $_GET['keyword-s'] != "none"){
-        include 'api/pixabayAPI.php';
-        $imageURLs = getImageURLs($_GET['keyword-s'], $_GET['layout']);
-        $backgroundImage = $imageURLs[array_rand($imageURLs)];
+    $keyword = "";
+    $layout = "";
+    $category = "";
     
+    if(isset($_GET['keyword'])){
+        if ( !empty($_GET['keyword']) ) {
+            $keyword = $_GET['keyword'];
+        } 
+        if ( !empty($_GET['layout']) ) {
+            $layout = $_GET['layout'];
+        }
+        if( !empty($_GET['category']) ) {
+            $category = $_GET['category'];
+        }
+        
+        if(!empty($_GET['keyword'])){
+            include 'api/pixabayAPI.php';
+            $imageURLs = getImageURLs($keyword, $layout, $category);
+            $backgroundImage = $imageURLs[array_rand($imageURLs)];
+        }
     }
 ?>
 
@@ -31,23 +40,27 @@
     </head>
     
     <body>
-        <br/><br/>
-        <!-- HTML form goes here -->
-        <form>
-            <input type="text" name="keyword" placeholder="keyword">
-            <input type="submit" value="Submit" />
-            </br>
-            <input type="radio" name="layout" value="vertical" checked> Vertical<br>
-            <input type="radio" name="layout" value="horizontal"> Horizontal<br>
-            </br>
-            <select name="keyword-s">
-                <option value="none">None</option>
-                <option value="waffles">Waffles</option>
-                <option value="tacos">Tacos</option>
-                <option value="moose">Moose</option>
-                <option value="audi">Audi</option>
-            </select>
-        </form>
+        <div class="search">
+            <br/><br/>
+            <!-- HTML form goes here -->
+            <form>
+                <input type="text" name="keyword" placeholder="keyword">
+                <input type="submit" value="Submit" />
+                </br>
+                <input type="radio" name="layout" value="vertical" class="rad" checked> Vertical<br>
+                <input type="radio" name="layout" value="horizontal" class="rad"> Horizontal<br>
+            </form>
+            <p>Select a category</p>
+            <form>
+                <select name="category">
+                    <option value="none">None</option>
+                    <option value="cold">Cold</option>
+                    <option value="hot">Hot</option>
+                    <option value="complex">Complex</option>
+                    <option value="simple">Simple</option>
+                </select>
+            </form> 
+        </div>
         <?php
             if (!isset($imageURLs)) {
                 echo "<h2>Type a keyword to display a slideshow <br /> with random images from Pixabay.com </h2>";

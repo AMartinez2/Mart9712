@@ -2,7 +2,7 @@
         opacity:0.9;
         width: 100%;
         text-align:center;
-        color:yellow;
+        color:black;
         background-size: 100% 100%;
         background-attachment: fixed;
     }
@@ -16,3 +16,15 @@
          margin: 0 auto;   
          width: 700px;
     }
+    
+   .rad {
+       padding: 10px;
+   }
+   
+   .search {
+       width: 70%;
+       margin: auto;
+       padding-bottom: 7px;
+       background-color: #eee;
+       border-radius: 20px;
+   }
