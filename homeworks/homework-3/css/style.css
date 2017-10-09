@@ -1,0 +1,31 @@
+body {
+    background-color: #eee;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header {
+    padding-bottom: 5px;
+    min-height: 60px;
+    margin: 0;
+}
+img {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #333;
+}
+.container{
+    width: 75%;
+    max-width: 1000px;
+    min-width: 500px;
+    margin: auto;
+}
+.upper {
+    border-style: solid;
+    border-width: 3px;
+    border-color: #333;
+    margin-top: 13px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    background-color: #ddd;
+}
