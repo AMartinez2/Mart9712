@@ -53,8 +53,8 @@
                 <input 
                     type="number" 
                     name="heading" 
-                    min="0" 
-                    max="100" 
+                    min="-150" 
+                    max="150" 
                     step="10" 
                     value=
                         <?php 
@@ -67,7 +67,7 @@
                 >
                 
                 <h3>Pitch</h3>
-                <input type="range" name="pitch" min="0" max="10">
+                <input type="range" name="pitch" min="-100" max="100">
                 <input type="submit" value="Submit">
             </form>
         </div>
@@ -75,6 +75,8 @@
             <?php 
             if(isset($_GET['location']) && $_GET['location'] != 'none'){
                 googus($_GET['location'], $_GET['size'], $_GET['heading'], $_GET['pitch']);
+            }else{
+                echo "Please select a location...";
             }
             ?>
         </div>

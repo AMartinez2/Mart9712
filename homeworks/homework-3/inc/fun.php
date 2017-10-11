@@ -18,8 +18,4 @@ function googus($location, $size, $heading, $pitch){
     $gKey = 'AIzaSyCf4vmeb2WUebUP6yE1NVxhX92_u1RgjzA';
     echo "<img src='https://maps.googleapis.com/maps/api/streetview?size=".$sizeX."x".$sizeY."&location=".$location."&heading=".$heading."&pitch=".$pitch."&key=".$gKey."'>";
 }
-
-function keepValue($name_id, $value, $marker){
-    if(isset($_GET[$id_name]) && $_GET[$id_name] == $value) echo $marker;
-}
 ?>
