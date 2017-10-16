@@ -56,7 +56,11 @@ function displayAllDevices(){
         }
         if(isset($_GET['orderBy'])){
             $sql .= " ORDER BY ".$_GET['orderBy'];
+        }else{
+            $sql .= " ORDER BY deviceName";
         }
+    }else{
+        $sql .= " ORDER BY deviceName";
     }
 
     $stmt = $dbConn->prepare($sql);
