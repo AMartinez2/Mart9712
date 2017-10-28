@@ -1,5 +1,7 @@
 <?php
+// Add argument for a different database or copy and paste everything needed for the exam
 function getDatabaseConnection() {
+    
     
     $host = 'localhost';//cloud 9
     $dbname = 'tcp';
