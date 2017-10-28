@@ -3,6 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title> Lab: 6 Admin Login Page </title>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
     </head>    
     <body>
         <h1> Admin Login </h1>
