@@ -1,0 +1,8 @@
+Table: el_users
+userId, userName, password
+
+Table: el_classes
+classId, className 
+
+Table: el_items 
+itemId, atomicNum, itemName, itemClass
