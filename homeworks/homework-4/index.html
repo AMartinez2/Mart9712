@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>SPACE INVADERS</title>
+		<meta charset="utf-8">
 		<script type="text/javascript">
 			var gameScreen;
 			var output;
@@ -228,24 +229,47 @@
 				if(event.keyCode==37) leftArrowDown = false;
 				if(event.keyCode==39) rightArrowDown = false;
 			});
+			
+			function reload() {
+				location.reload();
+			}
 
 		</script>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
 		<style>
+			body {
+				text-align: center;
+				font-family: 'Montserrat', sans-serif;
+			}
 			#gameScreen{
 				position: relative;
 				background-color: silver;
 				overflow: hidden;
+				margin: auto;
+				border-radius: 6px;
 			}
 
 			.gameObject{
 				position: absolute;
 				z-index: 1;
 			}
-
+			
+			#reset {
+				position: relative;
+				top: 10px;
+			}
 		</style>
 	</head>
 	<body onload="init()">
+		<h1>Space Invaders</h1>
 		<div id="gameScreen"></div>
-		<div id="output">degugger</div>
+		<h4>Left/Right arrow keys and Spacebar</h4>
+		<!--<div id="output">degugger</div>-->
+		<button onclick="reload()" id="reset">Reset</button>
+		<script>
+			function reload() {
+			    location.reload();
+			}
+		</script>
 	</body>
 </html>
