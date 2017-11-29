@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homework 5</title>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet"> 
+        <style>
+            body {
+                background-color: #eee;
+                min-width: 700px;
+                font-family: 'Spectral SC', serif;
+                text-align: center;
+            }
+            p {
+                margin: 5px;
+            }
+            
+            #output {
+                padding: 10px;    
+            }
+            
+            #output a {
+                text-decoration: none;
+                color: #798A55;
+            }
+            
+            button {
+                position: relative;
+                top: 10px;
+                background-color: #798A55;
+                border: none;
+                color: white;
+                padding: 7px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        </style>
+        <script>
+            function add(val) {
+                $.ajax({
+                    url: 'http://mart9712-cst336.herokuapp.com/homeworks/homework-5/add.php?q=' + val.replace(/\s/g, ''),
+                    type: "GET",
+                    dataType: 'json',
+                    }).done(function(data) {
+                        console.log("adding to database")
+                    }).fail(function(data) { // Something went wrong
+                    });
+            }
+            
+            function getAmount(val) {
+                $.ajax({
+                    url: 'http://mart9712-cst336.herokuapp.com/homeworks/homework-5/call.php?q=' + val.replace(/\s/g, ''),
+                    type: "GET",
+                    dataType: 'json',
+                    }).done(function(data) {
+                        if(data){
+                            $('#log').append("<p>" + val + " has been searched " + data[0]['count'] + " times</p>");
+                        }
+                    }).fail(function(data) { // Something went wrong
+                        console.log("waffles failed");
+                    });
+            }
+            
+            function getTimes(val) {
+                $.ajax({
+                    url: 'http://mart9712-cst336.herokuapp.com/homeworks/homework-5/call2.php?q=' + val.replace(/\s/g, ''),
+                    type: "GET",
+                    dataType: 'json',
+                    }).done(function(data) {
+                            $('#log').append("<p>Search History: </p>");
+                            for(var i = 0; i < data.length; i++){
+                                $('#log').append("<p>" + data[i]['time'] + "</p>");
+                            }
+                    }).fail(function(data) { // Something went wrong
+                        
+                    });
+            }
+            
+            function getResults() {
+                $('#output').html("");
+                var val = $('#input').val();
+                if ($('#typelist').val() == 'english'){
+                    var url = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' +
+                              val + '&format=json&callback=wikiCallback';
+                } 
+                else {
+                    var url = 'https://nl.wikipedia.org/w/api.php?action=opensearch&search=' +
+                              val + '&format=json&callback=wikiCallback';
+                }
+                $.ajax({
+                    url: url,
+                    dataType: 'jsonp',
+                    async: false,
+                    cache: false,
+                    type: "GET"
+                    }).done(function(data) {
+                        // Clear the div
+                        var list = data[1];
+                        for (var i = 0; i < list.length; i++) {
+                            if ($('#typelist').val() == 'english'){
+                                $('#output').append("<a href='http://en.wikipedia.org/wiki/" +
+                                list[i].replace(/\s/g, '') + "'>" + list[i] + "</a><br>");
+                            }
+                            else {
+                                $('#output').append("<a href='http://nl.wikipedia.org/wiki/" +
+                                list[i].replace(/\s/g, '') + "'>" + list[i] + "</a><br>");
+                            }
+                        }
+                        $('#log').html(""); // Make sure log is cleared
+                        add(val);
+                        getAmount(val);
+                        getTimes(val);
+                    }).fail(function(data) { // Something went wrong
+                        $('#output').html("Failed to load wiki articels");
+                    });
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Enter some text: <input type="text" id="input"></br>
+            <select name="typelist" form="typelist" id="typelist">
+              <option value="english">English</option>
+              <option value="dutch">Dutch</option>
+            </select>
+        </form>
+        <button onclick="getResults()">GO</button>
+        <div id="output"></div>
+        <div id="log"></div>
+    </body>
+</html>
