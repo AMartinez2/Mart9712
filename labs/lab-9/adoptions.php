@@ -14,7 +14,7 @@
                     $('#petModal').modal("show");
                     $.ajax({
                         type: "GET",
-                        url: "https://cst336-amartinez2.c9users.io/Mart9712/labs/lab-9/api/getPetInfo.php",
+                        url: "https://mart9712-cst336.herokuapp.com/labs/lab-9/getPetInfo.php",
                         dataType: "json",
                         data: { "id": $(this).attr('id') },
                         complete: function(data,status) {
